@@ -1,0 +1,106 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+.homepage-container {
+  position: relative;
+}
+
+/* Sliding Nav Styles - Color compromise nahi hoga */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Nav ki original colors preserve rahenge */
+}
+
+/* Nav sliding animation */
+.nav-visible {
+  transform: translateY(0);
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* Hero section mein nav transparent background (optional) */
+.nav-in-hero {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Content section mein nav solid background */
+.nav-in-content {
+  background: var(--nav-bg-color, white); /* Apna original color use karo */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Content sections */
+.content-section {
+  position: relative;
+  z-index: 1;
+  /* Content ke original colors preserve rahenge */
+}
+
+/* Scroll animations */
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section transitions */
+section, .content-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+section.animate-fade-in, .content-section.animate-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero section proper spacing */
+#hero {
+  position: relative;
+  /* Hero ke original colors preserve rahenge */
+}
+
+/* No layout shift during nav hide/show */
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

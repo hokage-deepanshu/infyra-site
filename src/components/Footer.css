@@ -1,0 +1,40 @@
+ footer {
+     background: rgba(0, 0, 0, 0.8);
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     padding: 4rem 2rem 2rem;
+ }
+
+ .footer-content {
+     max-width: 1400px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     gap: 3rem;
+     margin-bottom: 3rem;
+ }
+
+ .footer-section h3 {
+     color: #60a5fa;
+     margin-bottom: 1rem;
+     font-weight: 900;
+ }
+
+ .footer-section a {
+     color: #9ca3af;
+     font-size: 1rem;
+     text-decoration: none;
+     display: block;
+     margin-bottom: 0.75rem;
+     transition: color 0.3s ease;
+ }
+
+ .footer-section a:hover {
+     color: #60a5fa;
+ }
+
+ .footer-bottom {
+     text-align: center;
+     padding-top: 2rem;
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     color: #6b7280;
+ }

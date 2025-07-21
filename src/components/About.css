@@ -1,0 +1,207 @@
+/* Base section styling */
+.about-section {
+  padding: 15rem 0;
+  background:linear-gradient(45deg, rgba(0, 0, 0, 0.534), rgba(117, 118, 118, 0.342)), url('aboutbg.png') no-repeat center center/cover;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section {
+  width: 100%;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* Typography */
+.about-section h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.statement {
+  font-size: 1.3rem;
+  color: #c9e0ff;
+  text-align: center;
+  margin-bottom: 4rem;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Content grid */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.about-text p {
+  font-size: 1.3rem;
+  font-weight: 900;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 1.5em;
+}
+
+/* Beliefs section */
+.beliefs {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.beliefs h3 {
+  color: #cfe4ff;
+  margin-bottom: 1.7rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.belief-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.belief-item:hover {
+  transform: translateX(10px);
+  color: #60a5fa;
+}
+
+.belief-item::before {
+  content: '→';
+  margin-right: 1rem;
+  color: #3b82f6;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  min-width: 180px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+  background: #60a5fa;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(96, 165, 250, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .statement {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .beliefs {
+    padding: 2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section h2 {
+    font-size: 2rem;
+  }
+  
+  .statement {
+    font-size: 1rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+  
+  .beliefs {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,267 @@
+body {
+  background-image: url('/Heroimg-4k.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  background-attachment: fixed;
+}
+
+
+/* ==================================
+   HERO SECTION CSS - CLEANED VERSION
+   ================================== */
+
+/* --- 1. Main Hero Section Wrapper --- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  overflow: hidden;
+ 
+}
+
+/* --- 2. Two-Column Container --- */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* --- 3. Left Column (Text Content) --- */
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  z-index: 5;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+.hero-text h3 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: #87CEEB;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #ffffff;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+/* --- 4. Right Column (Video Animation) --- */
+.hero-animation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+}
+
+.video-circle {
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(200px, 30vw, 400px);
+  border-radius: 50%;
+  top: 20px;
+
+  overflow: visible; /* Changed from hidden to visible */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-circle video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 3; /* Increased z-index */
+}
+
+/* Double Ring Animation - Version 4 */
+.animated-border {
+  position: absolute;
+  padding: 70px;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 2; /* Keep it above video but below other content */
+}
+
+.animated-border::before,
+.animated-border::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation-fill-mode: both;
+}
+
+.animated-border::before {
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  border-top-color: #ff6b6b;
+  border-right-color: #4ecdc4;
+  animation: spin 2s linear infinite;
+  z-index: 1;
+}
+
+.animated-border::after {
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  border-bottom-color: #45b7d1;
+  border-left-color: #f9ca24;
+  animation: spin 3s linear infinite reverse;
+  z-index: 0;
+}
+
+/* Spin animation for double rings */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional Glow Effect */
+.video-circle::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, transparent 70%);
+  animation: pulse 2s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.2;
+  }
+}
+
+/* --- 5. Animated Scroll Down Link --- */
+.scroll-down-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-down-container span {
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.mouse {
+  width: 25px;
+  height: 45px;
+  border: 2px solid white;
+  border-radius: 60px;
+  position: relative;
+}
+
+.mouse .scroller {
+  width: 4px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-animation 2.2s infinite;
+}
+
+@keyframes scroll-animation {
+  0% { opacity: 1; top: 5px; }
+  30% { opacity: 1; top: 10px; }
+  60% { opacity: 0; top: 20px; }
+  100% { opacity: 0; top: 5px; }
+}
+
+/* ==================================
+   RESPONSIVE DESIGN
+   ================================== */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .hero-text {
+    max-width: 100%;
+  }
+  
+  .hero-animation {
+    max-width: 300px;
+  }
+  
+  .hero-section {
+    padding: 0 20px;
+  }
+}
+
+/* ==================================
+   SHARED STYLES
+   ================================== */
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.statement, .careers-intro p {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+  text-align: center;
+}
