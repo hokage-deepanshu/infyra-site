@@ -4,16 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://hokage-deepanshu.github.io/infyra-site",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-
     "preview": "vite preview"
-
   },
   "dependencies": {
     "lucide-react": "^0.523.0",

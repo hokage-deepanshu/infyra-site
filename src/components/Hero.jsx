@@ -3,7 +3,7 @@ import './Hero.css';
 
 // Component ke liye assets
 import myImage from '../assets/Heroimg.png'; // Yeh aapki background image hai
-import heroCircleVideo from '../assets/Herobgvideo.mp4'; // Is video ko hum right side mein use karenge
+
 
 const Hero = () => {
   const heroRef = useRef(null);
